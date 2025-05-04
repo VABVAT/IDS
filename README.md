@@ -26,16 +26,10 @@ network-ids/
 pip install scapy requests argparse logging
 ```
 
-Or use the requirements file:
-
-```bash
-pip install -r python/requirements.txt
-```
-
 2. Run the IDS script:
 
 ```bash
-python python/ids.py --interface eth0 --log-level INFO
+python python/ids.py --interface eth0
 ```
 
 Replace `eth0` with your network interface.
@@ -73,8 +67,7 @@ The server should now be running at http://localhost:3000 (or your configured po
 ## Usage
 
 1. Start the Node.js server first to ensure the database connection is established.
-2. Run the Python IDS script to begin collecting and analyzing network traffic.
-3. Access the web interface through your browser to monitor network activity and alerts.
+2. Run the Python IDS script to begin collecting and analyzing network traffic
 
 ## Features
 
