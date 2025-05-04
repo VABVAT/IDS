@@ -5,14 +5,12 @@ A comprehensive network monitoring and intrusion detection system with Python ba
 ## Project Structure
 
 ```
-network-ids/
-├── python/           # Python packet analysis backend
-│   ├── ids.py        # Main packet analysis script
-│   └── requirements.txt
+network-ids/          
+├── ids.py        
 ├── server/           # Node.js web server
 │   ├── index.js      # Server entry point
 │   ├── package.json  # Node dependencies
-│   └── .env          # Environment variables (MongoDB connection)
+│   └── .env          # Environment variables 
 └── README.md         # This file
 ```
 
