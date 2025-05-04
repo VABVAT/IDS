@@ -70,10 +70,8 @@ The server should now be running at http://localhost:3000 (or your configured po
 ## Features
 
 - Real-time packet capture and analysis
-- Traffic pattern recognition
 - Anomaly detection
 - Event logging and alerting
-- Web-based dashboard for monitoring
 - Historical data storage in MongoDB
 
 ## Requirements
