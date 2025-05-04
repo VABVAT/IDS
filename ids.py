@@ -62,7 +62,7 @@ def detect_mitm(pkt):
         ip, mac = pkt.psrc, pkt.hwsrc
         if ip in arp_table and arp_table[ip] != mac:
             msg = (
-                f"🚨 MITM/ARP SPOOFING DETECTED: {ip} "
+                f"MITM/ARP SPOOFING DETECTED: {ip} "
                 f"was {arp_table[ip]} now {mac}"
             )
             send_alert(msg, {"ip": ip, "macs": [arp_table[ip], mac]})
@@ -81,7 +81,7 @@ def detect_nmap_scan(pkt):
         if len(dq) > THRESHOLD and (now - dq[0] <= WINDOW):
             last = last_alert.get(src, 0)
             if now - last > COOL_DOWN:
-                msg = f"🛑 NMAP‐STYLE SCAN DETECTED from {src} (SYNs={len(dq)})"
+                msg = f"NMAP‐STYLE SCAN DETECTED from {src} (SYNs={len(dq)})"
                 send_alert(msg, {"source_ip": src, "syn_count": len(dq)})
                 last_alert[src] = now
 
@@ -97,7 +97,7 @@ def detect_dns_spoof(pkt):
         new_ips = answers - seen
         if seen and new_ips:
             msg = (
-                f"🛡️ DNS SPOOF DETECTED: {qname} changed from {seen} to {answers}"
+                f"DNS SPOOF DETECTED: {qname} changed from {seen} to {answers}"
             )
             send_alert(msg, {"domain": qname, "old": list(seen), "new": list(answers)})
         dns_table[qname].update(answers)
@@ -122,9 +122,9 @@ def start_monitoring(interface):
             prn=process_packet
         )
     except PermissionError:
-        print("⚠️  Permission denied: try running with sudo/root.")
+        print("Permission denied: try running with sudo/root.")
     except Exception as e:
-        print(f"❌ Error starting sniff: {e}")
+        print(f"Error starting sniff: {e}")
 
 
 def main():
