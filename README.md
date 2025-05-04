@@ -27,7 +27,7 @@ pip install scapy requests argparse logging
 2. Run the IDS script:
 
 ```bash
-python python/ids.py --interface eth0
+python python/ids.py -i eth0
 ```
 
 Replace `eth0` with your network interface.
